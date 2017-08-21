@@ -10,7 +10,7 @@ class Pig
   end
 
   def roll_die
-    rand(6) + 1 
+    rand(6) + 1
   end
 
   def run
