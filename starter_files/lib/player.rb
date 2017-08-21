@@ -49,8 +49,8 @@ class CautiousPlayer < Player
   end
 end
 
-class StopsFifty < Player
-  def stops_50
+class StopsEven < Player
+  def stops_even
     num = rand(1..100)
     if num % 2 == 0
       @turn_over = true
@@ -58,22 +58,37 @@ class StopsFifty < Player
   end
 end
 
-# class StopsScore < Player
-#   def stops_score
-#     if @turn_score == 3
-#       @turn_over
-#     else
-#       super roll_again
-#     end
-#   end
-# end
-#
-# class StopsRolls < Player
-#   def stops_rolls
-#     if roll == 11
-#       @turn_over
-#     else
-#       super roll_again
-#     end
-#   end
-# end
+class StopsOdd < Player
+  def StopsOdd
+    num = rand(1..100)
+    if num % 2 != 0
+      @turn_over = false
+    end
+  end
+end
+
+class StopsScore < Player
+  def stops_score
+    if @turn_score == 3
+      @turn_over
+    else
+      super roll_again
+    end
+  end
+end
+
+class StopsRolls < Player
+  def stops_rolls
+    if roll == 11
+      @turn_over
+    else
+      super roll_again
+    end
+  end
+end
+
+class GreedyPlayer < Player
+  def roll_again?
+    super && @turn_score < 50
+  end
+end

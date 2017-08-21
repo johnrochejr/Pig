@@ -13,10 +13,10 @@ ARGV.each do |arg|
 end
 
 if players.length < 2
-  players.push(StopsFifty.new("StopsFifty1"))
+  players.push(StopsOdd.new("StopsOdd"))
 end
 if players.length == 1
-  players.push(StopsFifty.new("StopsFifty2"))
+  players.push(StopsEven.new("StopsEven"))
 end
 
 pig = Pig.new(*players, games: 1000, silent: true)
