@@ -10,7 +10,7 @@ class Player
 
   def start_game
     @score = 0
-  end 
+  end
 
   def start_turn
     @turn_score = 0
@@ -50,3 +50,49 @@ class CautiousPlayer < Player
 end
 
 ## TODO add your own Player subclasses here
+
+class Stops50 < Player
+
+end
+
+class StopsScore < Player
+
+end
+
+class StopsRolls < Player
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#
